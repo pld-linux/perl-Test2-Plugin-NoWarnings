@@ -8,13 +8,13 @@
 Summary:	Test2::Plugin::NoWarnings - Fail if tests warn
 Summary(pl.UTF-8):	Test2::Plugin::NoWarnings -niepowodzenie w przypadku ostrzeżeń z testów
 Name:		perl-Test2-Plugin-NoWarnings
-Version:	0.05
+Version:	0.06
 Release:	1
 License:	Artistic v2.0
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/D/DR/DROLSKY/Test2-Plugin-NoWarnings-%{version}.tar.gz
-# Source0-md5:	e3914fbf60baba3af083dc4d8adab802
-URL:		http://search.cpan.org/dist/Test2-Plugin-NoWarnings/
+# Source0-md5:	c329dcd57b3d5990e134508fc02d76d2
+URL:		https://metacpan.org/release/Test2-Plugin-NoWarnings
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
