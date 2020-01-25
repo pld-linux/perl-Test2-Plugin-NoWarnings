@@ -4,7 +4,6 @@
 #
 %define		pdir	Test2
 %define		pnam	Plugin-NoWarnings
-%include	/usr/lib/rpm/macros.perl
 Summary:	Test2::Plugin::NoWarnings - Fail if tests warn
 Summary(pl.UTF-8):	Test2::Plugin::NoWarnings -niepowodzenie w przypadku ostrzeżeń z testów
 Name:		perl-Test2-Plugin-NoWarnings
