@@ -1,27 +1,29 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Test2
 %define		pnam	Plugin-NoWarnings
 Summary:	Test2::Plugin::NoWarnings - Fail if tests warn
 Summary(pl.UTF-8):	Test2::Plugin::NoWarnings -niepowodzenie w przypadku ostrzeżeń z testów
 Name:		perl-Test2-Plugin-NoWarnings
-Version:	0.06
+Version:	0.10
 Release:	1
 License:	Artistic v2.0
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/D/DR/DROLSKY/Test2-Plugin-NoWarnings-%{version}.tar.gz
-# Source0-md5:	c329dcd57b3d5990e134508fc02d76d2
-URL:		https://metacpan.org/release/Test2-Plugin-NoWarnings
+Source0:	https://www.cpan.org/modules/by-authors/id/D/DR/DROLSKY/Test2-Plugin-NoWarnings-%{version}.tar.gz
+# Source0-md5:	d50e21a76f1fef09004092a73b1c065b
+URL:		https://metacpan.org/dist/Test2-Plugin-NoWarnings
+BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-IPC-Run3
-BuildRequires:	perl-Test-Simple >= 1.302015
-BuildRequires:	perl-Test2-Suite
+BuildRequires:	perl-Test-Simple >= 1.302167
+BuildRequires:	perl-Test2-Suite >= 1.302167
 %endif
-Requires:	perl-Test-Simple >= 1.302015
+Requires:	perl-Test2-Suite >= 1.302167
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,6 +44,7 @@ ostrzeżenia jest wypisywana poprzez diag.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make}
 
 %{?with_tests:%{__make} test}
